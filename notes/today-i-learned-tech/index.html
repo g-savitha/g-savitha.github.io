@@ -1,0 +1,81 @@
+<!doctype html><html lang=en><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=/css/base.css media=all><link rel=stylesheet href=/css/syntax.css media=all><link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel=stylesheet><script async src=https://kit.fontawesome.com/66c0687ece.js crossorigin=anonymous></script><meta name=description content="17 June, 2020 ES6: Private method using Symbol() Symbol in JavaScript(ES6) is a data type. The speciality about Symbols are that the value is unique. Using this feature, one could abstract methods of ES6 class. Here&rsquo;s an example:
+(() => { const FORMAT_MSG = Symbol();  class SayHello { constructor(name) { this[FORMAT_MSG](name);  } [FORMAT_MSG](name) { this.message = `Hello, ${name}` }  done() { alert(this.message); } } window.SayHello = SayHello; // make it available to global scope })() credit: Rajesh Pillai"><meta name=title content="Today I Learned (Tech) | Savitha Gollamudi"><meta name=keywords content="tech,programming,javascript,react,rust,nodejs,node,mongodb,postgresql"><meta name=robots content="index, follow"><meta charset=utf-8><meta name=language content="English"><meta name=revisit-after content="2 days"><meta name=author content="Abdus <mail@abdus.xyz>"><meta property="og:type" content="website"><meta property="og:url" content="g-savitha.github.io/g-savitha.github.io/notes/today-i-learned-tech/"><meta property="og:title" content="Today I Learned (Tech) | Savitha Gollamudi"><meta property="og:description" content="17 June, 2020 ES6: Private method using Symbol() Symbol in JavaScript(ES6) is a data type. The speciality about Symbols are that the value is unique. Using this feature, one could abstract methods of ES6 class. Here&rsquo;s an example:
+(() => { const FORMAT_MSG = Symbol();  class SayHello { constructor(name) { this[FORMAT_MSG](name);  } [FORMAT_MSG](name) { this.message = `Hello, ${name}` }  done() { alert(this.message); } } window.SayHello = SayHello; // make it available to global scope })() credit: Rajesh Pillai"><meta property="og:image" content="/images/default-meta-img.png"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="g-savitha.github.io/g-savitha.github.io/notes/today-i-learned-tech/"><meta property="twitter:title" content="Today I Learned (Tech) | Savitha Gollamudi"><meta property="twitter:description" content="17 June, 2020 ES6: Private method using Symbol() Symbol in JavaScript(ES6) is a data type. The speciality about Symbols are that the value is unique. Using this feature, one could abstract methods of ES6 class. Here&rsquo;s an example:
+(() => { const FORMAT_MSG = Symbol();  class SayHello { constructor(name) { this[FORMAT_MSG](name);  } [FORMAT_MSG](name) { this.message = `Hello, ${name}` }  done() { alert(this.message); } } window.SayHello = SayHello; // make it available to global scope })() credit: Rajesh Pillai"><meta property="twitter:image" content="/images/default-meta-img.png"><title>Today I Learned (Tech) | Savitha Gollamudi</title><meta name=google-site-verification content="SaBE4itR48HOEifszgie57M1Y1O9Ayk_rV5cBwah9LY"><body><small class=top-nav><a href=/>~/</a>
+<a href=/me/>~/about</a>
+<a href=/categories/>~/categories</a>
+<a href=/notes/>~/notes</a>
+<a href=/work/>~/work</a></small>
+<a href=/ style=text-align:center;display:block;margin-top:3rem><div class=logo><span>#"</span><span>Savitha Gollamudi</span><span>"</span></div></a><div id=content><div style="text-align:center;margin:3rem 0"><h2>Today I Learned (Tech)</h2><small></small></div><div class=section-content style=color:#252525><h3 id=17-june-2020>17 June, 2020</h3><h4 id=es6-private-method-using-symbol>ES6: Private method using <code>Symbol()</code></h4><p>Symbol in JavaScript(ES6) is a data type. The speciality about Symbols are
+that the value is unique. Using this feature, one could abstract methods of
+ES6 <code>class</code>. Here&rsquo;s an example:</p><div class=highlight><pre class=chroma><code class=language-javascript data-lang=javascript><span class=p>(()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+<span class=hl>    <span class=kr>const</span> <span class=nx>FORMAT_MSG</span> <span class=o>=</span> <span class=nx>Symbol</span><span class=p>();</span>
+</span>    <span class=kr>class</span> <span class=nx>SayHello</span> <span class=p>{</span>
+        <span class=nx>constructor</span><span class=p>(</span><span class=nx>name</span><span class=p>)</span> <span class=p>{</span>
+<span class=hl>            <span class=k>this</span><span class=p>[</span><span class=nx>FORMAT_MSG</span><span class=p>](</span><span class=nx>name</span><span class=p>);</span>
+</span>        <span class=p>}</span>
+
+<span class=hl>        <span class=p>[</span><span class=nx>FORMAT_MSG</span><span class=p>](</span><span class=nx>name</span><span class=p>)</span> <span class=p>{</span>
+</span><span class=hl>            <span class=k>this</span><span class=p>.</span><span class=nx>message</span> <span class=o>=</span> <span class=sb>`Hello, </span><span class=si>${</span><span class=nx>name</span><span class=si>}</span><span class=sb>`</span>
+</span><span class=hl>        <span class=p>}</span>
+</span>
+        <span class=nx>done</span><span class=p>()</span> <span class=p>{</span>
+            <span class=nx>alert</span><span class=p>(</span><span class=k>this</span><span class=p>.</span><span class=nx>message</span><span class=p>);</span>
+        <span class=p>}</span>
+    <span class=p>}</span>
+
+    <span class=nb>window</span><span class=p>.</span><span class=nx>SayHello</span> <span class=o>=</span> <span class=nx>SayHello</span><span class=p>;</span>      <span class=c1>// make it available to global scope
+</span><span class=c1></span><span class=p>})()</span>
+</code></pre></div><p>credit: <a href=https://teachyourselfcoding.com/articles/javascript-es6-private-methods-in-class-without-closure-using-symbol/>Rajesh Pillai</a></p></div><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"g-savitha.github.io"},"articleSection":"notes","name":"Today I Learned (Tech)","headline":"Today I Learned (Tech)","description":"17 June, 2020 ES6: Private method using Symbol() Symbol in JavaScript(ES6) is a data type. The speciality about Symbols are that the value is unique. Using this feature, one could abstract methods of ES6 class. Here\u0026rsquo;s an example:\n(() =\u0026gt; { const FORMAT_MSG = Symbol();  class SayHello { constructor(name) { this[FORMAT_MSG](name);  } [FORMAT_MSG](name) { this.message = `Hello, ${name}` }  done() { alert(this.message); } } window.SayHello = SayHello; \/\/ make it available to global scope })() credit: Rajesh Pillai","inLanguage":"en-US","author":"Savitha","creator":"Savitha","publisher":"Savitha","accountablePerson":"Savitha","copyrightHolder":"Savitha","copyrightYear":"1010","datePublished":"0001-01-01 00:00:00 \u002b0000 UTC","dateModified":"0001-01-01 00:00:00 \u002b0000 UTC","url":"g-savitha.github.io\/notes\/today-i-learned-tech\/","wordCount":"78","keywords":["Blog"]}</script><script type=module>
+  import { annotate } from "https://unpkg.com/rough-notation?module";
+
+  function checkParent(elem) {
+    const parent = elem.parentElement;
+    const strong = document.createElement("strong");
+    const em = document.createElement("em");
+    const del = document.createElement("del");
+    console.log(elem.hasChildNodes(), elem);
+
+    if (
+      parent.constructor === strong.constructor ||
+      parent.constructor === em.constructor ||
+      parent.constructor === del.constructor
+    )
+      return false;
+    if (elem.childElementCount > 0) return false;
+    return true;
+  }
+
+  function annotateElement(selector, type, color) {
+    document.querySelectorAll(selector).forEach((elem) => {
+      const shouldAllowAnnotation = checkParent(elem);
+      if (shouldAllowAnnotation)
+        annotate(elem, { type, color, multiline: true, animate: false }).show();
+    });
+  }
+
+  function annotateNestedElement(selector, type, color) {
+    document.querySelectorAll(selector).forEach((elem) => {
+      annotate(elem, {
+        type,
+        color,
+        multiline: true,
+        animate: false,
+        brackets: ["left", "right", "top", "bottom"],
+      }).show();
+    });
+  }
+
+  try {
+    annotateElement("em", "underline", "#2196f3");
+    annotateElement("strong", "highlight", "yellow");
+    annotateElement("del", "strike-through", "#ff0000");
+    annotateNestedElement("em > del", "crossed-off", "#ff0000");
+    annotateNestedElement("em > strong", "box", "lawngreen");
+    annotateNestedElement("em > em", "circle", "#ff000080");
+    annotateNestedElement("blockquote", "bracket", "#da3bf1");
+  } catch (exception) {
+    console.log(exception.message);
+  }
+</script><style>.section-content em,.section-content strong,.section-content del{font-style:normal;font-weight:400;text-decoration:none}blockquote{background-color:#fff;padding:.3rem;margin:2rem 0}</style></div><footer style="padding:6rem 1rem 2rem;text-align:center;color:gray"><small>built with <a href=https://gohugo.io>hugo</a> and
+<span style=color:red>❤️</span></small></footer><script>(()=>{if(document.queryCommandSupported("copy")){const codeBlocks=[...document.querySelectorAll(".highlight")];codeBlocks.forEach((block)=>{block.querySelector("pre.chroma").style.paddingTop="3rem";block.style.position="relative";const handler=document.createElement("button");handler.textContent="COPY";handler.style.position="absolute";handler.style.top="10px";handler.style.right="10px";handler.style.padding="0.25rem 0.5rem";handler.style.background="#ffffff";handler.style.borderRadius="4px";handler.style.border="1px solid #C9D5DE";handler.style.color="#2d3748";handler.addEventListener("click",()=>{const textarea=document.createElement("textarea");textarea.value=block.querySelector(".chroma > code").textContent;document.body.prepend(textarea);textarea.style.position="absolute";textarea.style.opacity=0;textarea.select();document.execCommand("copy");textarea.remove();handler.textContent="COPIED!";setTimeout(()=>(handler.textContent="COPY"),2000);});const langCard=document.createElement("span");const lang=block.querySelector(".chroma > code").classList.toString().split("language-")[1];langCard.textContent=lang;langCard.style.top="0";langCard.style.left="1rem";langCard.style.color="#ffffff";langCard.style.fontSize="0.7em";langCard.style.position="absolute";langCard.style.background="#3f51b5";langCard.style.padding="0.25rem 0.5rem";langCard.style.textTransform="uppercase";langCard.style.borderRadius="0 0 4px 4px";block.prepend(langCard);block.prepend(handler);});}})();</script></body></html>
