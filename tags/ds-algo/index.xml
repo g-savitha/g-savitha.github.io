@@ -3,5 +3,5 @@ Facts about prime numbers: Every prime number can be represented in form of (6n+
 Few facts about AP Initial Term (a): first number in the series Common difference (d): The value by which consecutive terms increase or decrease The behavior of the AP depends on the common difference d.</description></item><item><title>Recursion</title><link>https://www.gsavitha.in/notes/recursion/</link><pubDate>Sun, 23 Aug 2020 17:17:32 +0530</pubDate><guid>https://www.gsavitha.in/notes/recursion/</guid><description>Intro to recursion What is recursion?
 Recursion : A function calling itself directly or indirectly.
 Directly:
-void fun1(){ //somecode ... fun1(); //some other code... } Indirectly: Not a very common approach (Mostly direct recursive approach is used)
-void fun1(){ //somecode ... fun2(); //some other code... } void fun2(){ //somecode ... fun1(); //some other code... } If you dont add a base case, recursion never stops and we might end up with stackoverflow(in case of java) or segmentation fault error(in case of cpp).</description></item></channel></rss>
+1void fun1(){ 2 //somecode ... 3 fun1(); 4 //some other code... 5} Indirectly: Not a very common approach (Mostly direct recursive approach is used)
+1void fun1(){ 2 //somecode ... 3 fun2(); 4 //some other code... 5} 6void fun2(){ 7 //somecode ... 8 fun1(); 9 //some other code... 10} 11 12 If you dont add a base case, recursion never stops and we might end up with stackoverflow(in case of java) or segmentation fault error(in case of cpp).</description></item></channel></rss>
