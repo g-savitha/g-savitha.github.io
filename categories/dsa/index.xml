@@ -4,4 +4,5 @@ Few facts about AP Initial Term (a): first number in the series Common differenc
 Recursion : A function calling itself directly or indirectly.
 Directly:
 1void fun1(){ 2 //somecode ... 3 fun1(); 4 //some other code... 5} Indirectly: Not a very common approach (Mostly direct recursive approach is used)
+fun1() -&amp;gt; fun2() -&amp;gt; fun1()
 1void fun1(){ 2 //somecode ... 3 fun2(); 4 //some other code... 5} 6void fun2(){ 7 //somecode ... 8 fun1(); 9 //some other code... 10} 11 12 If you dont add a base case, recursion never stops and we might end up with stackoverflow(in case of java) or segmentation fault error(in case of cpp).</description></item></channel></rss>
