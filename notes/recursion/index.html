@@ -13,11 +13,12 @@ Recursion : A function calling itself directly or indirectly.
 Directly:
 1void fun1(){ 2 //somecode ... 3 fun1(); 4 //some other code... 5} Indirectly: Not a very common approach (Mostly direct recursive approach is used)
 fun1() -> fun2() -> fun1()
-1void fun1(){ 2 //somecode ... 3 fun2(); 4 //some other code... 5} 6void fun2(){ 7 //somecode ... 8 fun1(); 9 //some other code... 10} 11 12  If you dont add a base case, recursion never stops and we might end up with stackoverflow(in case of java) or segmentation fault error(in case of cpp)."><meta property="twitter:image" content="https://www.gsavitha.in/images/default-meta-img.png"><title>Recursion | Savitha Gollamudi</title><meta name=google-site-verification content="SaBE4itR48HOEifszgie57M1Y1O9Ayk_rV5cBwah9LY"><body><small class=top-nav><a href=/>~/</a>
-<a href=/work/>~/work</a>
-<a href=/about/>~/about</a>
-<a href=/categories/>~/categories</a>
-<a href=/notes/>~/notes</a></small>
+1void fun1(){ 2 //somecode ... 3 fun2(); 4 //some other code... 5} 6void fun2(){ 7 //somecode ... 8 fun1(); 9 //some other code... 10} 11 12  If you dont add a base case, recursion never stops and we might end up with stackoverflow(in case of java) or segmentation fault error(in case of cpp)."><meta property="twitter:image" content="https://www.gsavitha.in/images/default-meta-img.png"><title>Recursion | Savitha Gollamudi</title><meta name=google-site-verification content="SaBE4itR48HOEifszgie57M1Y1O9Ayk_rV5cBwah9LY"><body><small class=top-nav><a href=/>~/Home</a>
+<a href=/work/>~/Work</a>
+<a href=/about/>~/About</a>
+<a href=/categories/>~/Categories</a>
+<a href=/notes/>~/Notes</a>
+<a href=https://g-savitha.github.io/Logs/>~/Daily Logs</a></small>
 <a href=https://www.gsavitha.in/ style=text-align:center;display:block;margin-top:3rem><div class=logo><span>#"</span><span>Savitha Gollamudi</span><span>"</span></div></a><div id=content><div style="text-align:center;margin:3rem 0"><h2>Recursion</h2><small>23 August, 2020&nbsp;&nbsp;&#183;&nbsp;&nbsp;</small>
 <small><a style=text-decoration:none href=/categories/dsa>Dsa</a>
 <a style=text-decoration:none href=/categories/recursion>Recursion</a></small></div><div class=section-content style=color:#252525><h2 id=intro-to-recursion>Intro to recursion</h2><p>What is recursion?</p><p><em>Recursion</em> : A function calling itself directly or indirectly.</p><p><em>Directly:</em></p><div class=highlight><pre class=chroma><code class=language-cpp data-lang=cpp><span class=ln>1</span><span class=kt>void</span> <span class=nf>fun1</span><span class=p>(){</span>
