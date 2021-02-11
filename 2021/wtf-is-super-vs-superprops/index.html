@@ -8,12 +8,10 @@ Consider the example below.
   While checking react code, you might have come across a line super(props), sometimes super(). Ever wondered what&rsquo;s the difference between two? Why do we need to pass props ? Do we always need to pass props ?
 Consider the example below.
 1import React, { Component } from 'react'; 2class Game extends Component { 3 constructor(props) { 4 super(props); 5 this."><meta property="twitter:image" content="https://g-savitha.github.io/images/default-meta-img.png"><title>WTF is super() vs super(props) | Savitha's Notes</title><meta name=google-site-verification content="SaBE4itR48HOEifszgie57M1Y1O9Ayk_rV5cBwah9LY"><body><small class=top-nav><a href=/>~/Home</a>
-<a href=/work/>~/Work</a>
-<a href=/about/>~/About</a>
-<a href=/categories/>~/Categories</a>
 <a href=/notes/>~/Notes</a>
+<a href=/categories/>~/Categories</a>
 <a href=https://g-savitha.github.io/Logs/>~/Daily Logs</a></small>
-<a href=https://g-savitha.github.io/ style=text-align:center;display:block;margin-top:3rem><div class=logo><span>#"</span><span>Savitha Gollamudi</span><span>"</span></div></a><div id=content><div style="text-align:center;margin:3rem 0"><h2>WTF is super() vs super(props)</h2><small>29 January, 2021&nbsp;&nbsp;&#183;&nbsp;&nbsp;</small>
+<a href=https://g-savitha.github.io/ style=text-align:center;display:block;margin-top:3rem><div class=logo><span>#"</span><span>Savitha's Notes</span><span>"</span></div></a><div id=content><div style="text-align:center;margin:3rem 0"><h2>WTF is super() vs super(props)</h2><small>29 January, 2021&nbsp;&nbsp;&#183;&nbsp;&nbsp;</small>
 <small><a style=text-decoration:none href=/categories/react>React</a></small></div><div class=section-content style=color:#252525><h2 id=tldr->TL;DR 🚀</h2><blockquote><p>If you want to use <code>this.props</code> inside constructor of derived class, use super(props).</p></blockquote><hr><p>While checking react code, you might have come across a line <code>super(props)</code>, sometimes <code>super()</code>. Ever wondered what&rsquo;s the difference between two?
 Why do we need to pass <code>props</code> ? Do we always need to pass <code>props</code> ?</p><p>Consider the example below.</p><div class=highlight><pre class=chroma><code class=language-jsx data-lang=jsx><span class=ln> 1</span><span class=kr>import</span> <span class=nx>React</span><span class=p>,</span> <span class=p>{</span> <span class=nx>Component</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;react&#39;</span><span class=p>;</span>
 <span class=hl><span class=ln> 2</span><span class=kr>class</span> <span class=nx>Game</span> <span class=kr>extends</span> <span class=nx>Component</span> <span class=p>{</span>
