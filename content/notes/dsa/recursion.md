@@ -222,3 +222,128 @@ private static void fn(int n) {
   - The above fn takes less time on modern compilers because of tail recursion
 
 ## Tail Recursion
+
+To understand tail recursion, lets take a closer look at these 2 functions.
+
+```java
+//prints from n to 1
+void fn1() {
+    if(n==0) return;
+    System.out.println(n);
+    fn1(n-1);
+}
+//this function takes lesser time
+```
+
+```java
+//prints from 1 to n
+void fn2(){
+    if(n==0) return;
+    fn2(n-1);
+    System.out.println(n);
+}
+```
+
+Can you guess the reason why would 1st function take lesser time to compile on modern compilers?
+
+If you look at the call stack of `fn1()`
+
+```tree
++__fn1(3)
+    |__ 3
+    |__fn1(2)
+        |__ 2
+        |__ fn1(1)
+            |__ 1
+            |__ fn1(0)
+```
+
+When `fn1(0)` finishes, control returns back to `fn1(1)`, `fn1(1)` doesnt have anything to do it finishes immediately. This is where tail recursion comes into picture.
+
+A function is called **Tail recursive** when the parent function has nothing to do when the child finishes the call.
+
+This is not the case with `fn2(3)`. When `fn2(0)` returns to its parent `fn2(1)`, it still has got work to do (print the output).
+
+In very simple words
+
+> A function is called **tail recursive**, when the last thing that happens in the function is recursive call and nothing happens after that.
+
+### What are the pros of this?
+
+The point is your caller doesn't have to save the state, generally what happens in recursive calls is, caller's state is saved then called function is called and once the called function is finished then the caller resumes its function from the same point. We dont need to resume the execution here at all, there's no point in resuming the execution and thats what the optimisation modern compilers do.
+
+When modern compilers see tail recursive functions they replace the above code with
+
+```java {hl_lines = [3,7,8]}
+void fn1() {
+    //compiler adds this label
+    start:
+        if(n==0) return;
+        System.out.println(n);
+        // and replaces the line fn1(n-1) with below statements
+        n= n-1 ;
+        goto start;
+}
+```
+
+These changes that modern compilers make are called **Tail call elimination**
+
+Now, the question arises is when given a non tail recursive code, can we convert it tail recursive?
+
+Lets have a look at the below examples.
+
+```java
+//prints from 1 to n
+void fn2(){
+    if(n==0) return;
+    fn2(n-1);
+    System.out.println(n);
+}
+```
+
+```java
+//Tail recursive version of the code
+//initially pass k = 1
+void fn2(int n, int k){
+    if(n==0) return;
+    System.out.println(k);
+    fn2(n-1,k+1);
+}
+```
+
+Can we convert every non tail recursive to tail recursive by adding few parameters?
+
+**No.** Consider [merge sort](https://www.geeksforgeeks.org/merge-sort/) and [quick sort](https://www.geeksforgeeks.org/quick-sort/), if you take a closer look at these two algorithms, quick sort is tail recursive and merge sort is not. This is one of the reasons, quick sort is fast.
+
+In case of [tree traversals (Inorder,preorder and postorder)](https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/), you can notice that preorder traversal and inorder traversal are tail recursive, but post order traversal is not, thats why when you are given a problem and if you can choose any of the traversals, you should prefer either inorder or preorder over the postorder.
+
+### Is this tail recursive?
+
+```java
+int factorial(int n){
+    if(n==0 || n== 1) return 1;
+    return n * factorial(n-1);
+}
+```
+
+**No.** The reason is recursion is not the last thing that happens in this function. When you call `factorial(n-1)` you need to know the result of that function and multiply it with `n` and then it need to return. Parent call doesn't finish immediately after the child call, its going to use the result of child call and then multiply the result with `n` after that its going to return.
+
+#### Equivalent tail recursive code
+
+```java
+//initially pass k = 1
+int factorial(int n, int k){
+    if(n==0 || n== 1) return k;
+    return factorial(n-1,k*n);
+}
+```
+
+---
+
+Few problems on recursion worth looking at:
+
+- [Rod cutting](https://www.geeksforgeeks.org/cutting-a-rod-dp-13/)
+- [Generate subsets of an array](https://www.geeksforgeeks.org/backtracking-to-find-all-subsets/)
+- [Josephus Problem](https://www.geeksforgeeks.org/josephus-problem-set-1-a-on-solution/)
+- [Print all permutations of a string](https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/)
+- [Subset sum problem](https://www.geeksforgeeks.org/subset-sum-problem-dp-25/)
