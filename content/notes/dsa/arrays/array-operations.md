@@ -1,7 +1,7 @@
 ---
 title: "Array Operations"
 date: 2021-01-18T17:16:56+05:30
-draft: true
+draft: false
 tags: ["ds-algo", "programming", "competitive-programming"]
 categories: [dsa, arrays]
 sources: []
@@ -63,5 +63,16 @@ static int delete(int arr[], int n, int x){
    		arr[j] = arr[j + 1];
    	}
    	return n-1;
+}
+```
+
+> Check if an array is sorted
+
+```java
+static boolean isSorted(int[] arr, int n){
+	for(int i = 1; i <n; i++){
+		if(arr[i] > arr[i-1]) return false;
+	}
+	return true;
 }
 ```
