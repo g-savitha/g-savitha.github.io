@@ -2,7 +2,7 @@
 title: "Android Basics"
 date: 2021-10-17T15:34:26+05:30
 draft: false
-tags: [android-config, views, layouts]
+tags: [android-config, views, layouts, android-beginner]
 categories: [android]
 sources: [https://developer.android.com/]
 ---
@@ -45,6 +45,8 @@ sources: [https://developer.android.com/]
 
 ## ImageView
 
+- An ImageView is a UI element for displaying images in your app.
+
 ### Importing images in android studio.
 
 - In Android Studio, click on _View > Tool Windows > Resource Manager_ in the menus or click on the Resource Manager tab to the left of the Project window.
@@ -69,6 +71,11 @@ sources: [https://developer.android.com/]
 
 ## Accessibility
 
+> **Note:** Android provides many tools for users. For example, [TalkBack](https://support.google.com/accessibility/android/answer/6283677?hl=en) is the Google screen reader included on Android devices. TalkBack gives users spoken feedback so that users can use their device without looking at the screen. Read more about accessibility in the [developer reference guide.](https://developer.android.com/guide/topics/ui/accessibility) - Android documentation
+
+- _A content description_ can help _make your app more usable with TalkBack_ by defining the purpose of the UI element.
+- If you want to skip a view from accessibility set `importantForAccessibility` attribute to `no`
+
 ---
 
 For more info Refer :
@@ -78,3 +85,7 @@ For more info Refer :
 - [View](https://developer.android.com/reference/android/view/View)
 - [TextView](https://developer.android.com/reference/kotlin/android/widget/TextView)
 - [ConstraintLayout](https://developer.android.com/reference/androidx/constraintlayout/widget/ConstraintLayout)
+- [Resource Manager](https://developer.android.com/studio/write/resource-manager) in android studio
+- [ImageView](https://developer.android.com/reference/kotlin/android/widget/ImageView) class
+- [Accessibility](https://developer.android.com/guide/topics/ui/accessibility)
+- [Supporting different languages](https://developer.android.com/training/basics/supporting-devices/languages)
